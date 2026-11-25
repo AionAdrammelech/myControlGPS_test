@@ -1,0 +1,38 @@
+
+
+services:
+  db_mysql_myControlGPS:
+    image: mysql:latest
+    environment:
+        MYSQL_ROOT_PASSWORD: 1234
+        MYSQL_DATABASE: myControlGPS
+        MYSQL_USER: admControlGPS
+        MYSQL_PASSWORD: 1234
+    ports:
+        - "3306:3306"
+  front_myControlGPS:
+    image: node:trixie
+    command: ["sleep", "infinity"]
+    ports:
+        - "3000:3000"
+    volumes:
+        - type: bind
+          source: ./front
+          target: /home/node/front
+          read_only: false
+  back_myControlGPS:
+    build:
+        context: './back'
+        dockerfile: Dockerfile
+    image: 'sail-8.5/app'
+    ports:
+    #host:container
+        - "8000:8000"
+    volumes:
+        - type: bind
+          source: ./back
+          target: /backend
+          read_only: false
+
+    depends_on:
+        - db_mysql_myControlGPS

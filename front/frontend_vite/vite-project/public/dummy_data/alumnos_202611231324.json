@@ -1,0 +1,31 @@
+{
+"alumnos": [
+	{
+		"id_alumno" : 1,
+		"nombre_completo" : "carlos perez",
+		"direccion" : "col ivu",
+		"telefono" : 11112222,
+		"email" : null,
+		"foto" : "\/students\/default.jpg",
+		"genero" : "H",
+		"latitud" : null,
+		"longitud" : null,
+		"id_grado" : 1,
+		"id_seccion" : 1,
+		"id_school" : 2
+	},
+	{
+		"id_alumno" : 2,
+		"nombre_completo" : "carla perez",
+		"direccion" : "primavera",
+		"telefono" : 33334444,
+		"email" : null,
+		"foto" : "\/students\/default.jpg",
+		"genero" : "M",
+		"latitud" : null,
+		"longitud" : null,
+		"id_grado" : 3,
+		"id_seccion" : 2,
+		"id_school" : 1
+	}
+]}
